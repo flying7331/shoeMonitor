@@ -4,7 +4,7 @@ import threading
 import time
 
 urlList = [
-    # 新增监控URL填在这下面
+    # 设置要监控的url
     "https://m.poizon.com/mapi/product/detail?productId=14450&source=shareDetail&sign=08ab59f20a7c8c08b199156a863d3c52",
     "https://m.poizon.com/mapi/product/detail?productId=27050&source=shareDetail&sign=29d7ca0272239f18e230e473212b2c7d",
     "https://m.poizon.com/mapi/product/detail?productId=26715&source=shareDetail&sign=f9475e1e7c6df8fde0877186f7d4a5f8",
