@@ -15,13 +15,13 @@ interval = 5
 
 
 currentTime = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
-print(currentTime + " 程序启动, 走向人生巅峰...  ")
+print(currentTime + " 程序启动, 迎娶白富美...  ")
 
 dataDict = {}
 
 
 def pullData():
-    print(currentTime + " 抓取数据, 迎娶白富美...")
+    print(currentTime + " 抓取数据, 走向人生巅峰...")
     for url in urlList:
         response = requests.get(url)
         res = response.json()
