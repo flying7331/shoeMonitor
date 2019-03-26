@@ -14,15 +14,17 @@ urlList = [
 interval = 5
 
 
-currentTime = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+currentTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 print(currentTime + " 程序启动, 迎娶白富美...  ")
 
 dataDict = {}
 
 
 def pullData():
+    currentTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
     print(currentTime + " 抓取数据, 走向人生巅峰...")
     for url in urlList:
+        currentTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         response = requests.get(url)
         res = response.json()
         data = res['data']
@@ -38,7 +40,7 @@ def pullData():
         if(oldProdDict is None):
             dataDict[title] = prodDict
             prodDict = json.dumps(prodDict)
-            rowData = currentTime + " 发现新数据：" + title + " - " + str(prodDict)
+            rowData = currentTime + " 发现新数据："  + productId + " - " + title + " - " + str(prodDict)
             print(rowData)
             with open(r'.\\' + productId + '.txt', 'a') as file:
                 file.write('\r\n' + rowData)
@@ -46,7 +48,7 @@ def pullData():
             oldProdDictJson = json.dumps(oldProdDict)
             prodDictJson = json.dumps(prodDict)
             if(oldProdDictJson != prodDictJson):
-                rowData1 = currentTime + " 请注意以下数据有变化: " + title + " ！！！"
+                rowData1 = currentTime + " 请注意以下数据有变化: " + productId + " - " + title + " ！！！"
                 rowData2 = currentTime + " 旧数据: " + oldProdDictJson
                 rowData3 = currentTime + " 新数据: " + prodDictJson
 
